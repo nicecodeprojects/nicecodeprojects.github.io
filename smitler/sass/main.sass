@@ -1,0 +1,142 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #585858
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	background-size: cover
+	&.ishome
+		.site-header
+			min-height: 700px
+			height: 100vh
+			background-color: $dark
+			color: #fff
+			.top-line
+				padding-top: 40px
+				position: absolute
+				width: 100%
+				z-index: 1
+.logo
+	img
+		margin-left: 45px
+		margin-top: 0px
+		height: auto
+		width: 125px
+.phone
+	position: absolute
+	right: 85px
+	top: 40px
+	font-family: firasans, sans-serif
+	font-size: 22px
+	white-space: nowrap
+	.fa
+		color: #AAA
+		font-size: 22px
+		margin-right: 3px
+
+	input, textarea
+		border: #585858 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+section, header 
+	position: relative
+	background-size: cover 
+	background-position: center
+
+section 
+	background-color: #fff
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.hamburger
+	right: 0
+	position: absolute
+	top: 32px
+	.hamburger-box
+		width: 34px
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+	width: 34px
+	border-radius: 0
+	background-color: #fff
+	height: 2px	
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after
+	background-color: #ffffff
+
+.mm-navbar
+	height: auto
+	position: relative
+	padding: 0
+	border: none 
+	.mm-navbar__title
+		padding: 0
+		img
+			width: 128px
+			height: auto
+			margin: 25px 0 30px 0
+.mm-panel
+	padding: 0 25px
+html.mm-wrapper_opened
+	overflow-y: scroll
+.mm-panels, .mm-panels > .mm-panel
+	right: -18px
+	left: 0
+.mm-listitem_selected > .mm-listitem__text
+	background-color: transparent
+.mm-menu .mm-listitem_selected a 
+	color: #ffffff
+.mm-menu .mm-listitem_selected a:visited 
+	color: $accent
+.mm-listitem::after 
+	border: none
+.mm-panel_has-navbar
+	padding-top: 0
+.mm-panels > .mm-panel > .mm-listview:first-child, .mm-panels > .mm-panel > .mm-navbar + .mm-listview
+	margin-top: 0
+
+.mm-listview
+	> li
+		> a
+			transition: color 0.25s ease
+			padding: 
+				left: 12%
+				right: 12%
+			&:hover
+				color: $accent
+			&::before
+				content: '\f3a5'
+				font-family: "Font Awesome 5 Free"
+				font-size: 12px
+				margin-right: 12px
+		&.active
+			&>a
+				color: $accent
+@import "media" // Always at the end
